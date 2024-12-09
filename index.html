@@ -3,66 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Section</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Autoplay Video with Button for Sound</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sound-button {
+      position: absolute;
+     /* top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 20px;*/
+      width:100%;
+      height:100%;
+      background-color: rgba(0, 0, 0, 0);
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <section class="blog-section">
-    <h1 class="section-title">My Blog</h1>
-    <button>download my resume</button>
+  <video id="background-video" autoplay muted loop playsinline>
+    <source src="WhatsApp Video 2024-12-08 at 18.51.49_8f413424.mp4" type="video/mp4">
+   
+  </video>
 
-    <!-- Search Bar -->
-    <div class="search-container">
-      <input type="text" id="search-bar" placeholder="Search blogs..." />
-    </div>
+  <div class="sound-button" id="soundButton">
+  
 
-    <!-- Blog List -->
-    <div id="blog-container">
-      <!-- Blog 1 -->
-      <div class="blog-card">
-        <h3 class="blog-title">Understanding React State</h3>
-        <p class="blog-description">
-          React state is an essential concept in modern web development. It allows you to manage data dynamically...
-          <span class="extra-text"> This enables you to create interactive UIs by re-rendering the component whenever the state changes. Learning React state is critical for building scalable apps.</span>
-        </p>
-        <button class="read-more-btn">Read More</button>
-      </div>
+  </div>
 
-      <!-- Blog 2 -->
-      <div class="blog-card">
-        <h3 class="blog-title">CSS Grid vs Flexbox</h3>
-        <p class="blog-description">
-          CSS Grid and Flexbox are powerful layout tools for modern web design. Flexbox is one-dimensional...
-          <span class="extra-text"> while CSS Grid is two-dimensional, allowing for more complex designs. Knowing when to use each can improve your design process.</span>
-        </p>
-        <button class="read-more-btn">Read More</button>
-      </div>
+  <script>
+    const video = document.getElementById('background-video');
+    const soundButton = document.getElementById('soundButton');
 
-      <!-- Blog 3 -->
-      <div class="blog-card">
-        <h3 class="blog-title">JavaScript ES6 Features</h3>
-        <p class="blog-description">
-          ES6 brought new features to JavaScript, including arrow functions, promises, and template literals...
-          <span class="extra-text"> These features simplify coding and improve performance. Understanding these concepts is essential for modern JavaScript development.</span>
-        </p>
-        <button class="read-more-btn">Read More</button>
-      </div>
-    </div>
-
-    <!-- "No Result" Message -->
-    <p id="no-result-message" style="display: none; color: red; font-size: 1.2rem; margin-top: 1rem;">
-      Nothing is found.
-    </p>
-
-    <!-- Pagination -->
-    <div class="pagination">
-      <button class="page-btn" data-page="1">1</button>
-      <button class="page-btn" data-page="2">2</button>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
+    // Unmute video when button is clicked
+    soundButton.addEventListener('click',function() {
+      video.muted = false; // Unmute
+      video.play().catch((error) => {
+        console.error("Error playing video:", error);
+      });
+      soundButton.style.display = 'none'; // Hide the button
+    });
+  </script>
 </body>
 </html>
 
-img ki kono linkup kore dite hoi?
+
+
+
