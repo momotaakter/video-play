@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Section</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="blog-section">
+    <h1 class="section-title">My Blog</h1>
+    <button>download my resume</button>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search blogs..." />
+    </div>
+
+    <!-- Blog List -->
+    <div id="blog-container">
+      <!-- Blog 1 -->
+      <div class="blog-card">
+        <h3 class="blog-title">Understanding React State</h3>
+        <p class="blog-description">
+          React state is an essential concept in modern web development. It allows you to manage data dynamically...
+          <span class="extra-text"> This enables you to create interactive UIs by re-rendering the component whenever the state changes. Learning React state is critical for building scalable apps.</span>
+        </p>
+        <button class="read-more-btn">Read More</button>
+      </div>
+
+      <!-- Blog 2 -->
+      <div class="blog-card">
+        <h3 class="blog-title">CSS Grid vs Flexbox</h3>
+        <p class="blog-description">
+          CSS Grid and Flexbox are powerful layout tools for modern web design. Flexbox is one-dimensional...
+          <span class="extra-text"> while CSS Grid is two-dimensional, allowing for more complex designs. Knowing when to use each can improve your design process.</span>
+        </p>
+        <button class="read-more-btn">Read More</button>
+      </div>
+
+      <!-- Blog 3 -->
+      <div class="blog-card">
+        <h3 class="blog-title">JavaScript ES6 Features</h3>
+        <p class="blog-description">
+          ES6 brought new features to JavaScript, including arrow functions, promises, and template literals...
+          <span class="extra-text"> These features simplify coding and improve performance. Understanding these concepts is essential for modern JavaScript development.</span>
+        </p>
+        <button class="read-more-btn">Read More</button>
+      </div>
+    </div>
+
+    <!-- "No Result" Message -->
+    <p id="no-result-message" style="display: none; color: red; font-size: 1.2rem; margin-top: 1rem;">
+      Nothing is found.
+    </p>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button class="page-btn" data-page="1">1</button>
+      <button class="page-btn" data-page="2">2</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+img ki kono linkup kore dite hoi?
